@@ -1,5 +1,3 @@
-# lilac/Makefile
-
 CC = gcc
 AR = ar
 CFLAGS = -Wall -Wextra -fPIC
