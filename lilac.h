@@ -10,6 +10,7 @@ typedef struct Matrix {
 } Matrix;
 
 int matrix_init(Matrix *m_a, int row, int column, bool random);
+int matrix_from_arr(Matrix *m_a, int* array, int row, int column);
 int matrix_manual(Matrix *m_a, int row, int column);
 int matrix_free(Matrix *m_a);
 

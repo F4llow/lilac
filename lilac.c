@@ -1,5 +1,7 @@
 #include "lilac.h"
 
+#include "../pgmv/pgmv.h"
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -169,6 +171,27 @@ int matrix_manual(Matrix *m_a, int row, int column) {
             arr[i][j] = digit;
         }
     }
+
+    return 0;
+}
+
+// TODO: Generalize to 2d array
+int matrix_from_arr(Matrix *m_a, int* array, int row, int column) {
+    m_a->row = row;
+    m_a->column = column;
+
+    double **arr = (double **)calloc(row, sizeof(double *));
+    for (int i = 0; i < row; i++) {
+        arr[i] = (double *)calloc(column, sizeof(double));
+    }
+    m_a->arr = arr;
+
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < column; j++) {
+            arr[i][j] = (double)array[j];
+        }
+    }
+    pgm_free(array);
 
     return 0;
 }
