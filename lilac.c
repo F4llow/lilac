@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+// #include <time.h>
 
 double rand_uniform() {
     return (-1 + (2 * ((double)rand()) / RAND_MAX));
@@ -45,7 +45,7 @@ int matrix_init(Matrix *m_a, int row, int column, bool random) {
     }
     m_a->arr = arr;
 
-    srand(time(NULL));
+    // srand(time(NULL));
     if (random) {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
